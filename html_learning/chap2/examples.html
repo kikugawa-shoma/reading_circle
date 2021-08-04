@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="説明を書けるよ" content="説明をここにも書けるよ">
+	<title>htmlで使えるいろいろなタグの説明</title>
+</head>
+
+<body>
+	<h1>見出し1。h1タグは1つのページに一度まで</h1>
+	<p>由来：<strong>H</strong>eading</p>
+	<h2>見出し2。h2以降は順番に使っていく</h2>
+	<h3>見出し3</h3>
+	<h4>見出し4</h4>
+	<h5>見出し5</h5>
+	<h6>見出し6</h6>
+
+	<h2>文章</h2>
+	<p>由来：<strong>P</strong>aragragh</p>
+	<p>文章をpタグで書きます。長すぎる文章は読み手が疲れるので控えよう</p>
+	<p>pタグが連続すると自動で改行が入る</p>
+
+	<br>
+
+	<h2>画像</h2>
+	<p>imgタグで画像を貼れるよ↓パスの指定の仕方に注意</p>
+	<p>alt属性：画像が読み込めなかったとき表示するもの、src属性:どの画像を表示するか</p>
+	<img src="main.png" alt="画像が見つかりませんでした">
+	<br>
+	<img src="null.png" alt="画像が見つかりませんでした">
+
+	<br>
+
+	<h2>リンク</h2>
+	<p>由来：<strong>A</strong>nchor</p>
+	<p><a href="https://www.monotaro.com/">リンク</a>はaタグを使う。href属性でURLを指定</p>
+	<p><a href="mailto:hogehoge@yahoo.co.jp">メールを送る</a>
+		:mailtoでメールクライアントを立ち上げさせることもできる
+	</p>
+
+	<p>画像にリンクを貼ることもできる↓</p>
+	<a href="https://www.monotaro.com/"><img src="main.png" alt="画像が見つかりませんでした"></a>
+
+	<h2>箇条書き</h2>
+	<p>由来：<strong>U</strong>nordered <strong>L</strong>ist 、 <strong>L</strong>ist <strong>I</strong>tem</p>
+	<ul>
+		<li>りんご</li>
+		<li>みかん</li>
+		<li>バナナ</li>
+	</ul>
+
+	<h2>番号付き箇条書き</h2>
+	<p>由来：<strong>O</strong>rdered <strong>L</strong>ist </p>
+	<ol>
+		<li>電子レンジ</li>
+		<li>冷蔵庫</li>
+		<li>テレビ</li>
+	</ol>
+
+	<h2>tableタグで表も書ける</h2>
+	<p>由来： <strong>T</strong>able <strong>h</strong>eader、
+		<strong>T</strong>able <strong>R</strong>ow、
+	<strong>T</strong>able <strong>D</strong>ata </p>
+	<table border="1">
+		<tr>
+			<th></th>
+			<th>水道代</th>
+			<th>電気代</th>
+		</tr>
+		<tr>
+			<td>1月</td>
+			<td>1000円</td>
+			<td>2500円</td>
+		</tr>
+		<tr>
+			<td>2月</td>
+			<td>3000円</td>
+			<td>1500円</td>
+		</tr>
+	</table>
+
+	<h2>横セルをつなげることもできる</h2>
+	<p>colspan属性を使う</p>
+	<table border="1">
+		<tr>
+			<th></th>
+			<th>水道代</th>
+			<th>電気代</th>
+		</tr>
+		<tr>
+			<td>1月</td>
+			<td colspan="2">合計3500円</td>
+		</tr>
+		<tr>
+			<td>2月</td>
+			<td>3000円</td>
+			<td>1500円</td>
+		</tr>
+	</table>
+
+	<h2>縦セルをつなげることもできる</h2>
+	<p>rowspan属性を使う</p>
+	<table border="1">
+		<tr>
+			<th></th>
+			<th>水道代</th>
+			<th>電気代</th>
+		</tr>
+		<tr>
+			<td>1月</td>
+			<td rowspan="2">合計4000円</td>
+			<td>2500円</td>
+		</tr>
+		<tr>
+			<td>2月</td>
+			<td>1500円</td>
+		</tr>
+	</table>
+	<br>
+
+	<h2>コメントアウト</h2>
+	&lt;!-- ここにコメントを書くと表示されない。 --&gt;
+	<!-- この文章は表示されません -->
+	
+	<br>
+
+	<h2>入力フォームも作れる</h2>
+	<form action="url" method="POST">
+	<input type="text" name="name1">
+	<br>
+	<p>placeholder属性で何を入力すべきかを表現できる</p>
+	<input type="text" name="name1" placeholder="プレースホルダー">
+	<br>
+	<p>type属性で指定された属性値に適したフォームになる</p>
+	<input type="text" name="name1" placeholder="テキスト">
+	<br>
+	<input type="search" name="search" placeholder="検索クエリ">
+	<br>
+	<input type="email" name="mail" placeholder="メールアドレス">
+	<br>
+	<input type="tel" name="tel_number" placeholder="電話番号">
+	<p>type="tel"は電話番号の入力形式が幅広いのでtype="text"と同じ動作</p>
+	<p>他はchromeで開くと少しずつ違う</p>
+	<br>
+	</form>
+
+	<h2>ラジオボタンも作れる</h2>
+	<input type="radio" name="fish_or_beef" value="beef">肉
+	<input type="radio" name="fish_or_beef" value="fish" checked>魚
+	<br>
+	<p>checked属性で最初から選択された状態にできる</p>
+	<input type="radio" name="beef_or_veg" value="beef" checked>肉
+	<input type="radio" name="beef_or_veg" value="veg">野菜
+	<br>
+
+	<h2>選択肢のグループはname属性が支配している</h2>
+	<input type="radio" name="a" value="beef">肉
+	<input type="radio" name="b" value="fish">魚
+	<br>
+	<input type="radio" name="a" value="beef">肉
+	<input type="radio" name="b" value="veg">野菜
+	<br>
+
+	<h2>チェックボックスも作れる</h2>
+	<p>当社を知ったきっかけを教えて下さい</p>
+	<ul>
+		<li><input type="checkbox" name="reason" value="1">友人・知人から話を聞いた</li>
+		<li><input type="checkbox" name="reason" value="2">リクナビを見て</li>
+		<li><input type="checkbox" name="reason" value="3">新聞・雑誌を見て</li>
+	</ul>
+	<p>こちらもchecked属性が使える</p>
+	<ul>
+		<li><input type="checkbox" name="reason" value="1">友人・知人から話を聞いた</li>
+		<li><input type="checkbox" name="reason" value="2" checked>リクナビを見て</li>
+		<li><input type="checkbox" name="reason" value="3">新聞・雑誌を見て</li>
+	</ul>
+	<br>
+
+	<h2>送信ボタンも表示できる</h2>
+	<input type="submit" value="送信する1">
+	<br>
+
+	<h2>画像を送信ボタンにすることもできる</h2>
+	<input type="image" src="button.png" value="送信する2" height=50>
+	<br>
+
+	<h2>セレクトボックスも作れる</h2>
+	携帯のキャリアは？
+	<p>selectedなし</p>
+	<select name="cellphone">
+		<option value="docomo" >docomo</option>
+		<option value="au">au</option>
+		<option value="softbank">softbank</option>
+		<option value="others">その他</option>
+	</select>
+	<br>
+	<p>selectedあり</p>
+	<select name="cellphone">
+		<option value="docomo" >docomo</option>
+		<option value="au" selected>au</option>
+		<option value="softbank">softbank</option>
+		<option value="others">その他</option>
+	</select>
+	<br>
+
+	<h2>複数行に渡るテキストのフォーム</h2>
+	<textarea name="thoughts" placeholder="今日の輪読会の感想をご記入ください"></textarea>
+	<br>
+
+	<h2>labelタグを使うと</h2>
+	<p>labelタグがないとき</p>
+	<input type="radio" name="fish_or_beef" value="beef">肉
+	<input type="radio" name="fish_or_beef" value="fish">魚
+	<br>
+	<p>labelタグがあるとき</p>
+	<input type="radio" name="beef_or_veg" value="beef" id="bv1">
+	<label for="bv1">肉</label>
+	<input type="radio" name="beef_or_veg" value="veg" id="bv2">
+	<label for="bv2">野菜</label>
+	<br>
+
+</body>
+</html>
