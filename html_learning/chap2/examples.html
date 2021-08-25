@@ -61,7 +61,8 @@
 	<h2>tableタグで表も書ける</h2>
 	<p>由来： <strong>T</strong>able <strong>h</strong>eader、
 		<strong>T</strong>able <strong>R</strong>ow、
-	<strong>T</strong>able <strong>D</strong>ata </p>
+		<strong>T</strong>able <strong>D</strong>ata
+	</p>
 	<table border="1">
 		<tr>
 			<th></th>
@@ -122,32 +123,32 @@
 	<h2>コメントアウト</h2>
 	&lt;!-- ここにコメントを書くと表示されない。 --&gt;
 	<!-- この文章は表示されません -->
-	
+
 	<br>
 
 	<h2>入力フォームも作れる</h2>
 	<form action="url" method="POST">
-	<input type="text" name="name1">
-	<br>
-	<p>placeholder属性で何を入力すべきかを表現できる</p>
-	<input type="text" name="name1" placeholder="プレースホルダー">
-	<br>
-	<p>type属性で指定された属性値に適したフォームになる</p>
-	<input type="text" name="name1" placeholder="テキスト">
-	<br>
-	<input type="search" name="search" placeholder="検索クエリ">
-	<br>
-	<input type="email" name="mail" placeholder="メールアドレス">
-	<br>
-	<input type="tel" name="tel_number" placeholder="電話番号">
-	<p>type="tel"は電話番号の入力形式が幅広いのでtype="text"と同じ動作</p>
-	<p>他はchromeで開くと少しずつ違う</p>
-	<br>
+		<input type="text" name="name1">
+		<br>
+		<p>placeholder属性で何を入力すべきかを表現できる</p>
+		<input type="text" name="name1" placeholder="プレースホルダー">
+		<br>
+		<p>type属性で指定された属性値に適したフォームになる</p>
+		<input type="text" name="name1" placeholder="テキスト">
+		<br>
+		<input type="search" name="search" placeholder="検索クエリ">
+		<br>
+		<input type="email" name="mail" placeholder="メールアドレス">
+		<br>
+		<input type="tel" name="tel_number" placeholder="電話番号">
+		<p>type="tel"は電話番号の入力形式が幅広いのでtype="text"と同じ動作</p>
+		<p>他はchromeで開くと少しずつ違う</p>
+		<br>
 	</form>
 
 	<h2>ラジオボタンも作れる</h2>
 	<input type="radio" name="fish_or_beef" value="beef">肉
-	<input type="radio" name="fish_or_beef" value="fish" checked>魚
+	<input type="radio" name="fish_or_beef" value="fish">魚
 	<br>
 	<p>checked属性で最初から選択された状態にできる</p>
 	<input type="radio" name="beef_or_veg" value="beef" checked>肉
@@ -189,7 +190,7 @@
 	携帯のキャリアは？
 	<p>selectedなし</p>
 	<select name="cellphone">
-		<option value="docomo" >docomo</option>
+		<option value="docomo">docomo</option>
 		<option value="au">au</option>
 		<option value="softbank">softbank</option>
 		<option value="others">その他</option>
@@ -197,7 +198,7 @@
 	<br>
 	<p>selectedあり</p>
 	<select name="cellphone">
-		<option value="docomo" >docomo</option>
+		<option value="docomo">docomo</option>
 		<option value="au" selected>au</option>
 		<option value="softbank">softbank</option>
 		<option value="others">その他</option>
@@ -220,5 +221,8 @@
 	<label for="bv2">野菜</label>
 	<br>
 
+
+
 </body>
+
 </html>
