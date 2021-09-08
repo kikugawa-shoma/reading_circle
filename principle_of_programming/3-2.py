@@ -16,8 +16,16 @@ stack = deque()
 stack.append(3)
 stack.append(4)
 stack.append(5)
-print(queue.pop())
-print(queue.pop())
-print(queue.pop())
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
+
+# キュー
+stack.appendleft(7)
+stack.appendleft(8)
+stack.appendleft(9)
+print(stack.pop())
+print(stack.pop())
+print(stack.pop())
 
 # appendleftは使うことなくキューとスタックとして使用できる
