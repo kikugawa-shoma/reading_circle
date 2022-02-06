@@ -1,0 +1,5 @@
+# docker build -t practical:1 -f Dockerfile_5_5_practical
+# docker run -it --rm -p 8000:80 practical:1
+# リクエストを投げるとindex.htmlの内容が返ってくる
+
+FROM base:1

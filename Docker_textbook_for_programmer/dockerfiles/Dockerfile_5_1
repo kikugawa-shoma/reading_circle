@@ -1,0 +1,5 @@
+# scratch:中身が何も入っていないイメージ
+FROM scratch
+
+# ERROR
+RUN echo hello

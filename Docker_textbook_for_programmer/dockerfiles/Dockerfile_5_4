@@ -1,0 +1,9 @@
+# 実行コマンド
+# docker build -t d:1 -f Dockerfile_5_4 ./
+# docker run -it --rm d:1
+# docker run -it --rm d:1 goodnight
+
+FROM centos:latest
+
+ENTRYPOINT ["echo"]
+CMD ["hello"]

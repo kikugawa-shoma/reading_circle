@@ -1,0 +1,14 @@
+# shell形式とexec形式の比較
+
+FROM centos:latest
+
+ENV c hello
+
+# RUN echo $c > test_shell.txt
+# RUN [ "echo", "${c}",">", "test_exec.txt"]
+
+# shell形式：shell変数展開が使用可能
+CMD echo $PATH
+
+# shell形式：shell変数展開が使用不可
+CMD ["echo","$PATH"]

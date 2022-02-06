@@ -1,0 +1,19 @@
+# docker build -t base:1 -f Dockerfile_5_5_base ./
+# docker run -it --rm -p 8000:80 base:1
+# baseイメージからコンテナを立ててリクエストを投げると、nginxの初期画面が表示される(ONBUILDは実行されない)
+
+
+FROM ubuntu:jammy
+
+RUN ["apt","update", "-y"]
+RUN ["apt-get","update","-y"]
+RUN ["apt-get","install","-y","tzdata"]
+RUN ["apt-get","install","-y", "python3","python3-pip"]
+RUN ["apt","install", "-y","nginx"]
+RUN ["apt-get","install","-y","ufw"]
+RUN ["ufw","allow","Nginx HTTP"]
+RUN ["apt","install","-y","curl"]
+
+ONBUILD ADD index.html /var/www/html
+
+CMD ["nginx","-g","daemon off;"]

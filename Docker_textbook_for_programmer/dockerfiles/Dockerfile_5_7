@@ -1,0 +1,22 @@
+# docker build -t d:1 -f Dockerfile_5_7 ./
+# docker run -it --rm d:1
+
+FROM centos:latest
+
+# key valueの書き方
+# 空白含んでOK
+ENV a1 hello world
+
+# テキストではダブルクオテーションも文字列として扱われると書いているがおそらく誤植
+ENV a2 "hello"
+
+# key=valueの書き方
+ENV a3=value
+
+# 複数の値を同時にセット
+# エスケープ
+ENV a4=hoge\
+    a5=\$fuga\
+    a6=\"abh
+
+CMD echo -e "a1 : $a1 \na2 : $a2\na3 : $a3\na4 : $a4 \na5 : $a5 \na6 : $a6"
