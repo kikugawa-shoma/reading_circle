@@ -1,0 +1,40 @@
+services:
+  
+  server1:
+    container_name: container1
+    build:
+      context: .
+      dockerfile: Dockerfile1
+    tty: true
+    command: bash
+    volumes:
+      - type: volume
+        source: test_volume
+        target: /volume_test1
+
+  server2:
+    container_name: container2
+    build:
+      context: .
+      dockerfile: Dockerfile2
+    tty: true
+    command: bash
+    volumes:
+      - type: volume
+        source: test_volume
+        target: /volume_test2
+
+  server3:
+    container_name: container3
+    build:
+      context: .
+      dockerfile: Dockerfile3
+    tty: true
+    command: bash
+    volumes:
+      - type: bind
+        source: .
+        target: /volume_test3
+
+volumes:
+  test_volume:

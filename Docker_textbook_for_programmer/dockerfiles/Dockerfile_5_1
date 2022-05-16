@@ -1,5 +1,5 @@
-# scratch:中身が何も入っていないイメージ
+FROM busybox AS source
+# nothing to do.
 FROM scratch
-
-# ERROR
-RUN echo hello
+COPY --from=source /bin/busybox /bin/ping
+CMD ["/bin/ping", "-c" ,"8.8.8.8"]

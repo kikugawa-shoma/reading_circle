@@ -1,4 +1,4 @@
 FROM centos:7
 
-# CMD echo hello
-ENTRYPOINT echo hello
+CMD echo hello
+# ENTRYPOINT echo hello

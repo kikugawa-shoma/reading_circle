@@ -4,11 +4,14 @@ FROM centos:latest
 
 ENV c hello
 
-# RUN echo $c > test_shell.txt
-# RUN [ "echo", "${c}",">", "test_exec.txt"]
+RUN echo ${c} > test_shell.txt
+
+# これがなぜtest.exec.txtが生成されないのかがわからない
+RUN ["/bin/bash","-c","echo ${#c} > test.exec.txt"]
+
 
 # shell形式：shell変数展開が使用可能
-CMD echo $PATH
+# CMD echo $PATH
 
 # shell形式：shell変数展開が使用不可
-CMD ["echo","$PATH"]
+# CMD ["echo","$PATH"]

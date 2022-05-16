@@ -1,0 +1,52 @@
+# docker-composeファイルの書き方のバージョンを指定する。現在は非推奨
+version: '3.3'
+
+# アプリケーションを動かすための各要素をserviceと呼ぶ
+# アプリケーションを構成するコンテナ一つ一つのこと
+services:
+  server1:
+    # ビルドを行う必要がない場合のイメージの指定方法
+    image: ubuntu:10.04
+  server2:
+    # ビルドを行う場合のイメージの指定方法
+    build:
+      context: directory/path/to/file
+      dockerfile: DockerfileName
+    # コンテナでPID=0で動かすプロセス
+    # Dockerfileで指定されている場合は上書きされる
+    command: /bin/bash
+    entrypoint: /bin/bash
+
+    # ネットワーク上で名前解決できるようにする(server2にいながらcurl server1みたいにできるということ)
+    # 将来廃止されるらしい。http://docs.docker.jp/v1.12/compose/networking.html#links
+    # コンテナ同士でやりとりしたいなら今はnetworkを使うべき
+    links:
+      - server1:server1
+
+    # コンテナの起動順序を指定してやりたい場合に使用
+    # コンテナ上のアプリケーションが利用可能になるまで待つという制御はされない
+    # 起動時にDBコンテナにクエリを投げたりする場合はアプリケーション側で対策が必要
+    depends_on:
+      - server1
+
+    # pオプションといっしょ
+    # コンテナとホストをつなぐポートを指定する
+    # xx:yy形式はymlでは時刻として解釈されてしまうのでダブルクオテーションをつける
+    ports:
+      - "host port:container port"
+    # 環境変数の指定
+    environment:
+      - name=value
+    # 環境変数をファイルで定義してそれを指定する場合
+    env_file:
+      - path/to/file
+    # コンテナの名前指定
+    container_name: container name
+    # コンテナへのラベルの指定
+    labels:
+      - com.host.description=label
+    
+networks:
+
+volumes:
+
