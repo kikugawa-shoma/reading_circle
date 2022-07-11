@@ -10,5 +10,5 @@ class TestPerson(unittest.TestCase):
 
     def testCreatePersonWithNameAndAge(self):
         person = Person(self.personName, self.personAge)
-        self.assertEqual(self.presonName, person.getName())
+        self.assertEqual(self.personName, person.getName())
         self.assertEqual(self.personAge, person.getAge())
