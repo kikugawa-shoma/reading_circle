@@ -1,4 +1,4 @@
-from app.person import Person
+from app.person import Person, AgeBelowMinimumException
 
 import unittest
 

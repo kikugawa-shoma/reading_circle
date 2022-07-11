@@ -11,3 +11,8 @@ class Person():
 
     def getAge(self):
         return self.age
+
+
+class AgeBelowMinimumException(Exception):
+    def __init__(self):
+        pass
