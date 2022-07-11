@@ -16,3 +16,7 @@ class TestPerson(unittest.TestCase):
     def testConstraints(self):
         self.assertEqual(Person.MINIMUM_AGE, 1)
         self.assertEqual(Person.MAXIMUM_AGE, 200)
+
+    def testConstructorThrowsExceptionWhenAgeBelowMinimum(self):
+        with self.assertRaises(AgeBelowMinimumException):
+            person = Person(self.personName, self.personAge)
