@@ -3,6 +3,8 @@ class Person():
     MAXIMUM_AGE = 200
 
     def __init__(self, name, age):
+        if(age < Person.MINIMUM_AGE):
+            raise AgeBelowMinimumException
         self.name = name
         self.age = age
 

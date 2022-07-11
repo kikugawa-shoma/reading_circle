@@ -19,4 +19,4 @@ class TestPerson(unittest.TestCase):
 
     def testConstructorThrowsExceptionWhenAgeBelowMinimum(self):
         with self.assertRaises(AgeBelowMinimumException):
-            person = Person(self.personName, self.personAge)
+            person = Person(self.personName, Person.MINIMUM_AGE-1)
