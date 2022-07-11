@@ -18,3 +18,8 @@ class Person():
 class AgeBelowMinimumException(Exception):
     def __init__(self):
         pass
+
+
+class AgeAboveMaximumException(Exception):
+    def __init__(self):
+        pass
