@@ -1,9 +1,10 @@
 class Person():
     def __init__(self, name, age):
-        "aa"
+        self.name = name
+        self.age = age
 
     def getName(self):
-        return "a"
+        return self.name
 
     def getAge(self):
-        return 0
+        return self.age
