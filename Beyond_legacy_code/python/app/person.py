@@ -3,7 +3,7 @@ class Person():
         "aa"
 
     def getName(self):
-        "a"
+        return "a"
 
     def getAge(self):
-        0
+        return 0
