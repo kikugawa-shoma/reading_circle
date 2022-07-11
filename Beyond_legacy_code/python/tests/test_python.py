@@ -12,3 +12,7 @@ class TestPerson(unittest.TestCase):
         person = Person(self.personName, self.personAge)
         self.assertEqual(self.personName, person.getName())
         self.assertEqual(self.personAge, person.getAge())
+
+    def testConstraints(self):
+        self.assertEqual(Person.MINIMUM_AGE, 1)
+        self.assertEqual(Person.MAXIMUM_AGE, 200)
